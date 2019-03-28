@@ -1,5 +1,6 @@
 # Computacao-Paralela-e-Sistemas-Distribuidos
 Trabalhos Práticos das Disciplinas de Computação Paralela e Sistemas Distribuídos - Teórica e Prática
+
 Grupo composto por: Frederico Oliveira Freitas, Luan Felipe Ribeiro e Talles Souza Silva
 
 Trabalhos Práticos da Disciplina de Computação Paralela e Sistemas Distribuídos - Teórica 
@@ -12,4 +13,4 @@ Trabalhos Práticos da Disciplina de Computação Paralela e Sistemas Distribuí
   * Thread 2
   * Thread 3
   * Thread 4
-  *Avaliação - AUDI - Fábrica de Automóveis 
+  * Avaliação - AUDI - Fábrica de Automóveis 
