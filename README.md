@@ -7,6 +7,7 @@ Trabalhos Práticos da Disciplina de Computação Paralela e Sistemas Distribuí
  * Jantar Dos Filosofos
  * Montagem do Cluster
  * Chat
+ * Web Service
  
 Trabalhos Práticos da Disciplina de Computação Paralela e Sistemas Distribuídos - Prática
   * Thread 1
