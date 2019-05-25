@@ -1,0 +1,309 @@
+---
+swagger: "2.0"
+info:
+  description: Documentação referente ao Trabalho Prático da Disciplina de Programação Paralela e Sistemas Distribuídos - Uso do Swagger. O código tem como objetivo o cadastramento de usuários e administradores, bem como o acesso a tela de cadastramento, via login.
+  version: 1.0.0
+  title: Swagger
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+host: www.swagger.epizy.com
+basePath: /v2
+tags:
+- name: Swagger
+  description: Funcionalidades de Cadastro
+  externalDocs:
+    description: Encontre Mais Em
+    url: http://swagger.epizy.com/?i=1
+schemes:
+- http
+paths:
+  /Adm:
+    get:
+      tags:
+      - Administrador
+      summary: Encontrar Administradores pelo Id
+      description: Objetos do tipo Administradores que serão selecionados
+      operationId: encontrarAdm
+      produces:
+      - application/json
+      parameters:
+      - name: status
+        in: query
+        description: Valores de status que precisam ser considerados para o filtro
+        required: true
+        type: integer
+      responses:
+        200:
+          description: Operação com Sucesso
+          schema:
+            type: integer
+        400:
+          description: Entrada Inválida
+        404:
+          description: Administrador Não Encontrador
+    post:
+      tags:
+      - Administrador
+      summary: Adicionar novo Administrador
+      description: ""
+      operationId: addAdm
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        description: 'Objeto Administrador que será cadastrado no sistema '
+        required: true
+        schema:
+          $ref: '#/definitions/Adm'
+      responses:
+        200:
+          description: Operação com Sucesso
+          schema:
+            type: integer
+        400:
+          description: Solicitação Inválida
+  /Usuario:
+    get:
+      tags:
+      - Usuario
+      summary: Encontrar Usuários pelo Id
+      description: Objetos do tipo Usuários que serão selecionados
+      operationId: encontrarUsuario
+      produces:
+      - application/json
+      parameters:
+      - name: status
+        in: query
+        description: Valores de status que precisam ser considerados para o filtro
+        required: true
+        type: integer
+      responses:
+        200:
+          description: Operação com Sucesso
+          schema:
+            type: integer
+        400:
+          description: Entrada Inválida
+        404:
+          description: Usuário Não Encontrador
+    post:
+      tags:
+      - Usuario
+      summary: Adicionar novo Usuário
+      description: ""
+      operationId: addUsuario
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        description: 'Objeto Usuário que será cadastrado no sistema '
+        required: true
+        schema:
+          $ref: '#/definitions/Adm'
+      responses:
+        200:
+          description: Operação com Sucesso
+          schema:
+            type: integer
+        400:
+          description: Entrada Inválida
+  /Login:
+    get:
+      tags:
+      - Login/Usuario
+      summary: Realiza o Acesso do Usuário no Sistema
+      description: ""
+      operationId: loginUser
+      produces:
+      - application/json
+      parameters:
+      - name: email
+        in: query
+        description: Usuário deve entrar com o email
+        required: true
+        type: string
+      - name: senha
+        in: query
+        description: A senha deve ter um formato válido - Letras ou Números
+        required: true
+        type: string
+      responses:
+        200:
+          description: Operação Com Sucesso
+        400:
+          description: Email Ou Senha Inválidos
+  /Logout:
+    get:
+      tags:
+      - Login/Usuario
+      summary: Realiza o Encerramento do Uso do Usuário no Sistema
+      description: ""
+      operationId: logoutUser
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        default:
+          description: Operação Com Sucesso
+  /LoginAdm:
+    get:
+      tags:
+      - Login/Administrador
+      summary: Realiza o Acesso do Administrador no Sistema
+      description: ""
+      operationId: loginAdm
+      produces:
+      - application/json
+      parameters:
+      - name: email
+        in: query
+        description: Usuário deve entrar com o email
+        required: true
+        type: string
+      - name: senha
+        in: query
+        description: A senha deve ter um formato válido - Letras ou Números
+        required: true
+        type: string
+      responses:
+        200:
+          description: Operação Com Sucesso
+        400:
+          description: Email Ou Senha Inválidos
+  /LogoutAdm:
+    get:
+      tags:
+      - Login/Administrador
+      summary: Realiza o Encerramento do Uso do Administrador no Sistema
+      description: ""
+      operationId: logoutAdm
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        default:
+          description: Operação Com Sucesso
+definitions:
+  Cadastro:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      nome:
+        type: string
+      rua:
+        type: string
+      numero:
+        type: string
+      complemento:
+        type: string
+      bairro:
+        type: string
+      cidade:
+        type: string
+      cep:
+        type: string
+      cpf:
+        type: string
+      rg:
+        type: string
+      telefone:
+        type: string
+      email:
+        type: string
+      login:
+        type: string
+      senha:
+        type: string
+    xml:
+      name: Cadastro
+  Login:
+    type: object
+    properties:
+      email:
+        type: string
+      senha:
+        type: string
+    xml:
+      name: Login
+  Adm:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      nome:
+        type: string
+      rua:
+        type: string
+      numero:
+        type: string
+      complemento:
+        type: string
+      bairro:
+        type: string
+      cidade:
+        type: string
+      cep:
+        type: string
+      cpf:
+        type: string
+      rg:
+        type: string
+      telefone:
+        type: string
+      email:
+        type: string
+      login:
+        type: string
+      senha:
+        type: string
+    xml:
+      name: Adm
+  Usuario:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      nome:
+        type: string
+      rua:
+        type: string
+      numero:
+        type: string
+      complemento:
+        type: string
+      bairro:
+        type: string
+      cidade:
+        type: string
+      cep:
+        type: string
+      cpf:
+        type: string
+      rg:
+        type: string
+      telefone:
+        type: string
+      email:
+        type: string
+      login:
+        type: string
+      senha:
+        type: string
+    xml:
+      name: Usuario
