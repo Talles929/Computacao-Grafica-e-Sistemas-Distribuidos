@@ -1,0 +1,188 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Documentação referente ao Trabalho Prático da Disciplina de Programação Paralela e Sistemas Distribuídos - Uso do Swagger. O código tem como objetivo o cadastramento de usuários, bem como o acesso a tela de cadastramento, via login.",
+    "version" : "1.0.0",
+    "title" : "Webservice - Cadastro ",
+    "termsOfService" : "http://swagger.io/terms/",
+    "contact" : {
+      "email" : "apiteam@swagger.io"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host" : "www.swagger.io.com",
+  "basePath" : "/v2",
+  "tags" : [ {
+    "name" : "Webservice",
+    "description" : "Funcionalidades de Cadastro",
+    "externalDocs" : {
+      "description" : "Encontre Mais Em",
+      "url" : "https://github.com/Talles929/Computacao-Paralela-e-Sistemas-Distribuidos/tree/master/Android%20App%20Login%20Cadastro%20WebService/Android%20App%20Login%20Cadastro%20WebService"
+    }
+  } ],
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/Usuario" : {
+      "get" : {
+        "tags" : [ "Usuario" ],
+        "summary" : "Encontrar Usuários pelo Id",
+        "description" : "Objetos do tipo Usuários que serão selecionados",
+        "operationId" : "encontrarUsuario",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "description" : "Valores de id que precisam ser considerados para o filtro",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Operação com Sucesso",
+            "schema" : {
+              "type" : "integer"
+            }
+          },
+          "400" : {
+            "description" : "Entrada Inválida"
+          },
+          "404" : {
+            "description" : "Usuário Não Encontrador"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Usuario" ],
+        "summary" : "Adicionar novo Usuário",
+        "description" : "",
+        "operationId" : "addUsuario",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "Objeto Usuário que será cadastrado no sistema ",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Usuario"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Operação com Sucesso",
+            "schema" : {
+              "type" : "integer"
+            }
+          },
+          "400" : {
+            "description" : "Entrada Inválida"
+          }
+        }
+      }
+    },
+    "/Login" : {
+      "get" : {
+        "tags" : [ "Login/Usuario" ],
+        "summary" : "Realiza o Acesso do Usuário no Sistema",
+        "description" : "",
+        "operationId" : "loginUser",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "telefone",
+          "in" : "query",
+          "description" : "Usuário deve entrar com o telefone",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "senha",
+          "in" : "query",
+          "description" : "A senha deve ter um formato válido - Letras",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Operação Com Sucesso"
+          },
+          "400" : {
+            "description" : "Telefone Ou Senha Inválidos"
+          }
+        }
+      }
+    },
+    "/Logout" : {
+      "get" : {
+        "tags" : [ "Login/Usuario" ],
+        "summary" : "Realiza o Encerramento do Uso do Usuário no Sistema",
+        "description" : "",
+        "operationId" : "logoutUser",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "default" : {
+            "description" : "Operação Com Sucesso"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Cadastro" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        },
+        "nome" : {
+          "type" : "string"
+        },
+        "celular" : {
+          "type" : "integer"
+        },
+        "senha" : {
+          "type" : "string"
+        }
+      },
+      "xml" : {
+        "name" : "Cadastro"
+      }
+    },
+    "Login" : {
+      "type" : "object",
+      "properties" : {
+        "celular" : {
+          "type" : "integer"
+        },
+        "senha" : {
+          "type" : "string"
+        }
+      },
+      "xml" : {
+        "name" : "Login"
+      }
+    },
+    "Usuario" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        },
+        "nome" : {
+          "type" : "string"
+        },
+        "celular" : {
+          "type" : "integer"
+        },
+        "senha" : {
+          "type" : "string"
+        }
+      },
+      "xml" : {
+        "name" : "Usuario"
+      }
+    }
+  }
+}
