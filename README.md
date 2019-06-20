@@ -17,4 +17,4 @@ Trabalhos Práticos da Disciplina de Computação Paralela e Sistemas Distribuí
   * Thread 4
   * Avaliação - AUDI - Fábrica de Automóveis 
   * Produtor/Consumidor
-  * Web Service
+  * Web Service usando o Swagger
