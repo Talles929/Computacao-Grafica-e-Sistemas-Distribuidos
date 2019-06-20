@@ -7,7 +7,8 @@ Trabalhos Práticos da Disciplina de Computação Paralela e Sistemas Distribuí
  * Jantar Dos Filosofos
  * Montagem do Cluster
  * Chat
- * Web Service
+ * Cluster
+ * Docker
  
 Trabalhos Práticos da Disciplina de Computação Paralela e Sistemas Distribuídos - Prática
   * Thread 1
@@ -15,3 +16,4 @@ Trabalhos Práticos da Disciplina de Computação Paralela e Sistemas Distribuí
   * Thread 3
   * Thread 4
   * Avaliação - AUDI - Fábrica de Automóveis 
+  * * Web Service
