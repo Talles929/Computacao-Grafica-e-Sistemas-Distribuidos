@@ -16,4 +16,4 @@ Trabalhos Práticos da Disciplina de Computação Paralela e Sistemas Distribuí
   * Thread 3
   * Thread 4
   * Avaliação - AUDI - Fábrica de Automóveis 
-  * * Web Service
+  * Web Service
